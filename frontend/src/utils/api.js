@@ -1,8 +1,11 @@
 import axios from 'axios';
 
+// Use environment variable for API URL, fallback to production
+const API_URL = import.meta.env.VITE_API_URL || 'https://tmu-events-platform.onrender.com';
+
 // Create axios instance with base URL
 const api = axios.create({
-  baseURL: 'http://localhost:5004',
+  baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
